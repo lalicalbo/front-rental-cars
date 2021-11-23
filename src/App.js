@@ -1,4 +1,5 @@
 import { useState , useEffect} from "react"
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.scss';
 import CardContainer from "./components/CardContainer/index.js";
 
