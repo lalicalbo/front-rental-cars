@@ -1,5 +1,6 @@
 import { useState , useEffect} from "react"
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Container } from "react-bootstrap";
 import './App.scss';
 import CardContainer from "./components/CardContainer/index.js";
 
@@ -23,11 +24,11 @@ function App() {
 
 
   return (
-    <div className="App">
+    <Container fluid className="App">
     <h1>Alquila facilmente nuestros autos</h1>
     <CardContainer items={cars} />
   
-    </div>
+    </Container>
   );
 }
 
