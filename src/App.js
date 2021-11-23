@@ -1,7 +1,7 @@
 import { useState , useEffect} from "react"
 import './App.scss';
-//import imagen from "./resources/imagen-banner3.jpeg"
-//import RegisterForm from './components/RegisterForm';
+import CardContainer from "./components/CardContainer/index.js";
+
 
 
 function App() {
@@ -10,10 +10,11 @@ function App() {
 
   useEffect(()=>{
     const loadData =()=>{
-      fetch("http://localhost:3007/api/car")
+      fetch("https://api-rental-cars.herokuapp.com/api/car")
       .then(data=>data.json())
       .then(data =>{
         console.log("DATA",data)
+        setCars(data)
       })
     };
     loadData();
@@ -22,50 +23,9 @@ function App() {
 
   return (
     <div className="App">
-    <h1>BUGGY AND BUMPER CAR</h1>
-    <div className="cars-container">
-      <div className="card-cars">
-        <div className="img">
-        <img src="https://rickandmortyapi.com/api/character/avatar/1.jpeg"/>
-        </div>
-        <div className="text-container">
-        <h2>Marca:</h2>
-        <span>Puertas:</span>
-        <span>Puestos:</span>
-        <span>Maletas:</span>
-        <span>Precio:</span>
-        <button>ALQUILAR</button>
-        </div> 
-      </div>
-
-      <div className="card-cars">
-        <div className="img">
-        <img src="https://rickandmortyapi.com/api/character/avatar/1.jpeg"/>
-        </div>
-        <div className="text-container">
-        <h2>Marca:</h2>
-        <span>Puertas:</span>
-        <span>Puestos:</span>
-        <span>Maletas:</span>
-        <span>Precio:</span>
-        <button>ALQUILAR</button>
-        </div> 
-      </div>
-
-      <div className="card-cars">
-        <div className="img">
-        <img src="https://rickandmortyapi.com/api/character/avatar/1.jpeg"/>
-        </div>
-        <div className="text-container">
-        <h2>Marca:</h2>
-        <span>Puertas:</span>
-        <span>Puestos:</span>
-        <span>Maletas:</span>
-        <span>Precio:</span>
-        <button>ALQUILAR</button>
-        </div> 
-      </div>
-    </div>
+    <h1>Alquila facilmente nuestros autos</h1>
+    <CardContainer items={cars} />
+  
     </div>
   );
 }
