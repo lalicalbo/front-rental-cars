@@ -62,7 +62,7 @@ const RegisterForm=()=>{
     </Col>
   </Form.Group>
 
-  <Button className="button" variant="primary">PAGAR</Button>
+  <Button className="button">Pagar</Button>
       </Form>
     )
 
