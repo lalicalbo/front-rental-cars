@@ -5,6 +5,7 @@ import axios from "axios";
 import {API_URL} from "./constants/index.js"
 import './App.scss';
 import CardContainer from "./components/CardContainer/index.js";
+import RegisterContainer from "./components/RegisterContainer/index.js";
 
 
 
@@ -32,9 +33,10 @@ useEffect(()=>{
 },[])
 
   return (
-    <Container fluid className="App">
-    <h1>Alquila facilmente nuestros autos</h1>
+    
+    <Container fluid className="App"> 
     <CardContainer items={cars} />
+    <RegisterContainer />
     </Container>
   );
 }
