@@ -8,7 +8,6 @@ const RegisterContainer =()=>{
     return(
         <div className="register-Container">
             <RentCard />
-        
             <RegisterForm />
 
         </div>

@@ -6,6 +6,7 @@ import {API_URL} from "./constants/index.js"
 import './App.scss';
 import CardContainer from "./components/CardContainer/index.js";
 import RegisterContainer from "./components/RegisterContainer/index.js";
+import Baner from "./components/Banner/index.js";
 
 
 
@@ -35,6 +36,7 @@ useEffect(()=>{
   return (
     
     <Container fluid className="App"> 
+    <Baner />
     <CardContainer items={cars} />
     <RegisterContainer />
     </Container>

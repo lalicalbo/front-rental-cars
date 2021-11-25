@@ -5,6 +5,8 @@ import "./card.cars.scss"
 
 const CardCars = ({item,i})=>{
     return(
+      
+     
       <Card style={{ width: '20rem' }}>
   <Card.Img variant="top" src="https://i.pinimg.com/236x/e9/f4/0b/e9f40b49ad5de0682d1411d1a3298b7f--green-lamborghini-lamborghini-cars.jpg" alt="cars models" />
   <Card.Title className="marca">{item.marca}</Card.Title>
