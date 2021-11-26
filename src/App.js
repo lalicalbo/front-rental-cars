@@ -8,6 +8,7 @@ import RegisterContainer from "./components/RegisterContainer/index.js";
 import Baner from "./components/Banner/index.js";
 import InventoryCar from "./components/InventoryCar/index.js";
 import './App.scss';
+import ModalNewCar  from "./components/ModalNewCar/index.js";
 
 function App() {
 
@@ -39,6 +40,7 @@ useEffect(()=>{
     <CardContainer items={cars} />
     <RegisterContainer />
     <InventoryCar />
+    <ModalNewCar />
     </Container>
   );
 }
