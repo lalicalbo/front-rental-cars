@@ -1,12 +1,18 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import CardCars from "./CardCars/index.js";
 import "./card-container.scss"
+import {getCars} from "../../api/ApiCars";
 
-const CardContainer =({items})=>{
+const CardContainer =({props})=>{
+    const [cars, setCars] = useState([]);
+
+    useEffect(() => {
+        getCars().then(cars => setCars(cars))
+    }, [])
+
     return(
-        
         <div className="items-container" >
-        {items.map((item,i)=>(
+        {cars.map((item,i)=>(
             <CardCars item={item} i={i} key={i} />
           ))} 
       </div>
