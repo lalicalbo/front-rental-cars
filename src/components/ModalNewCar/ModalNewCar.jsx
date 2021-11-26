@@ -3,8 +3,18 @@ import { Modal , Button ,Row,Form,Col } from "react-bootstrap"
 import "./modalnewcar.scss"
 
 export const ModalNewCar = () => {
+  
+  
+  const handleSubmit = (event) =>{
+    event.preventDefault();
+    console.log("event en modal ",event)
+
+  }
+
+
+
     return (
-        <div className="modal-car">
+        <Form className="modal-car"  onSubmit={handleSubmit}>
             <Modal.Dialog>
   <Modal.Header className="close-button"closeButton>
     <Modal.Title className="modal-tittle">Nuevo Carro</Modal.Title>
@@ -44,7 +54,7 @@ export const ModalNewCar = () => {
       Maletas
     </Form.Label>
     <Col>
-      <Form.Control type="text"  />
+      <Form.Control />
     </Col>
   </Row>
   <br />
@@ -53,18 +63,18 @@ export const ModalNewCar = () => {
       Subir imagen
     </Form.Label>
     <Col>
-      <Form.Control type="text"  />
+      <Form.Control/>
     </Col>
   </Row>
   
 </>
   </Modal.Body>
   <Modal.Footer>
-    <Button className="button3" >Agregar</Button>
+    <Button type="submit" className="button3" >Agregar</Button>
   </Modal.Footer>
 </Modal.Dialog>
 
-        </div>
+        </Form>
     )
 }
 

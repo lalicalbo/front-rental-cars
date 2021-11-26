@@ -6,9 +6,7 @@ const CarList = () => {
     return (
         <div className="car-list">   
              <Table responsive="sm" borderless  className="table">            
-    <thead>
-    <h1>Lista de carros</h1>
-              <Button className="button2" variant="primary">Editar</Button>
+    <thead>       
       <tr>
         <th>Id</th>
         <th>Marca</th>

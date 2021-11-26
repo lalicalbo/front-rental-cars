@@ -6,7 +6,7 @@ const Baner = () => {
     return (
         <div >
             <div className="img-banner">
-            <img src={imagenbanner3} className="img"/>
+            <img src={imagenbanner3} className="img" alt=""/>
             <div className="tittle">
                 <p>BUGGY & BUMPER, INC</p>
             </div>
