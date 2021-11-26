@@ -1,15 +1,24 @@
 import React from 'react'
 import { Modal , Button ,Row,Form,Col } from "react-bootstrap"
 import "./modalnewcar.scss"
+import { createCar } from '../../api/ApiCars'
 
 export const ModalNewCar = () => {
   
   
   const handleSubmit = (event) =>{
     event.preventDefault();
-    console.log("event en modal ",event)
+  
+    const car = {
+      marca:event.target[1].value,
+      puertas:event.target[2].value,
+      puestos:event.target[3].value,
+      maletas:event.target[4].value,
+      precio:parseInt(event.target[5].value),
+    };
 
-  }
+    createCar(car);
+  };
 
 
 
@@ -19,7 +28,7 @@ export const ModalNewCar = () => {
   <Modal.Header className="close-button"closeButton>
     <Modal.Title className="modal-tittle">Nuevo Carro</Modal.Title>
   </Modal.Header>
-  <Modal.Body>
+  <Modal.Body >
     <>
   <br />
   <Row>
@@ -27,7 +36,7 @@ export const ModalNewCar = () => {
       Marca
     </Form.Label>
     <Col>
-      <Form.Control type="text"  />
+      <Form.Control type="text"   />
     </Col>
   </Row>
   <br />
@@ -36,7 +45,7 @@ export const ModalNewCar = () => {
      Puertas
     </Form.Label>
     <Col>
-      <Form.Control type="text"/>
+      <Form.Control type="Number"/>
     </Col>
   </Row>
   <br />
@@ -45,7 +54,7 @@ export const ModalNewCar = () => {
       Puestos
     </Form.Label>
     <Col>
-      <Form.Control type="text"  />
+      <Form.Control type="Number"  />
     </Col>
   </Row>
   <br />
@@ -60,10 +69,10 @@ export const ModalNewCar = () => {
   <br />
   <Row>
     <Form.Label column lg={2}>
-      Subir imagen
+      Precio
     </Form.Label>
     <Col>
-      <Form.Control/>
+      <Form.Control type="Number" />
     </Col>
   </Row>
   

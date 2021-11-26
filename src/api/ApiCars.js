@@ -18,4 +18,15 @@ export const getCars = async ()=>{
    }
 
 
+   export const createCar = async (params)=>{
+     console.log(params)
+    const endpoint = "/api/car/create"
+     axios.post(`${API_URL}${endpoint}`,params)
+     .catch (err=>{
+      console.log("error",err)
+    })
+
+   }
+
+
  
