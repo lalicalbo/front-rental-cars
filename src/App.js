@@ -3,12 +3,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container } from "react-bootstrap";
 import axios from "axios";
 import {API_URL} from "./constants/index.js"
-import './App.scss';
 import CardContainer from "./components/CardContainer/index.js";
 import RegisterContainer from "./components/RegisterContainer/index.js";
 import Baner from "./components/Banner/index.js";
-
-
+import InventoryCar from "./components/InventoryCar/index.js";
+import './App.scss';
 
 function App() {
 
@@ -39,6 +38,7 @@ useEffect(()=>{
     <Baner />
     <CardContainer items={cars} />
     <RegisterContainer />
+    <InventoryCar />
     </Container>
   );
 }
