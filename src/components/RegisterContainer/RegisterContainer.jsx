@@ -4,14 +4,22 @@ import RentCard from "./RentCard/index.js";
 import "./register-container.scss"
 
 
-const RegisterContainer =()=>{
-    return(
-        <div className="register-Container">
-            <RentCard />
-            <RegisterForm />
+const RegisterContainer = ({ currentCar }) => {
+    if (currentCar.marca != undefined) {
+        return (
+            <div className="register-Container">
+                <RentCard currentCar={currentCar} />
+                <RegisterForm currentCar={currentCar} />
 
+            </div>
+        )
+    }
+    else {
+        return (<div className="register-Container">
         </div>
-    )
+        )
+    }
+
 }
 
 

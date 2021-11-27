@@ -3,7 +3,7 @@ import { Card,Button} from "react-bootstrap";
 import "./card.cars.scss"
 
 
-const CardCars = ({item,i})=>{
+const CardCars = ({item, setCurrentCar})=>{
     return(
       
      
@@ -15,7 +15,7 @@ const CardCars = ({item,i})=>{
     <Card.Text>Puestos:{item.puestos} </Card.Text>
     <Card.Text>Maletas:{item.maletas} </Card.Text>
     <Card.Text>Precio:{item.precio} </Card.Text>
-    <Button className="button" variant="primary">Alquilar</Button>
+    <Button className="button" variant="primary" onClick={()=>{setCurrentCar(item)}}>Alquilar</Button>
   </Card.Body>
 </Card>
        /* <div className="card" key={i}>

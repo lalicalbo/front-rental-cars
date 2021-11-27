@@ -3,8 +3,8 @@ import { Modal , Button ,Row,Form,Col } from "react-bootstrap"
 import "./modalnewcar.scss"
 import { createCar } from '../../api/ApiCars'
 
+
 export const ModalNewCar = () => {
-  
   
   const handleSubmit = (event) =>{
     event.preventDefault();

@@ -7,9 +7,7 @@ const InventoryCar = () => {
     return (
         <div className="inventory">
             <Header />
-            <CarList />
-
-            
+            <CarList />    
         </div>
     )
 }

@@ -1,82 +1,47 @@
-import React from 'react'
-import { Table,Button } from 'react-bootstrap'
+import React, { useEffect, useState } from "react";
+import { Table, Button } from 'react-bootstrap'
 import "./car-list.scss"
+import { getCars } from "../../../api/ApiCars.js";
 
 const CarList = () => {
-    return (
-        <div className="car-list">   
-             <Table responsive="sm" borderless  className="table">            
-    <thead>       
-      <tr>
-        <th>Id</th>
-        <th>Marca</th>
-        <th>Puertas</th>
-        <th>Puestos</th>
-        <th>Maletas</th>
-        <th>Acciones     
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>1</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td> <Button className="button1" variant="primary">Editar</Button></td>
-        <td> <Button className="button1" variant="primary">Eliminar</Button></td>
-      </tr>
-      <tr>
-        <td>2</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td> <Button className="button1" variant="primary">Editar</Button></td>
-        <td> <Button className="button1" variant="primary">Eliminar</Button></td>
-      </tr>
-      <tr>
-        <td>3</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td> <Button className="button1" variant="primary">Editar</Button></td>
-        <td> <Button className="button1" variant="primary">Eliminar</Button></td>
-      </tr>
-      <tr>
-        <td>4</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td> <Button className="button1" variant="primary">Editar</Button></td>
-        <td> <Button className="button1" variant="primary">Eliminar</Button></td>
-      </tr>
-      <tr>
-        <td>5</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td> <Button className="button1" variant="primary">Editar</Button></td>
-        <td> <Button className="button1" variant="primary">Eliminar</Button></td>
-      </tr>
-      <tr>
-        <td>6</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td> <Button className="button1" variant="primary">Editar</Button></td>
-        <td> <Button className="button1" variant="primary">Eliminar</Button></td>
-      </tr>
-    </tbody>
-  </Table>
-   
-        </div>
-    )
+
+  const [cars, setCars] = useState([]);
+
+  useEffect(() => {
+    getCars().then(cars => setCars(cars))
+  }, [])
+
+  return (
+    <div className="car-list">
+      <Table responsive="sm" borderless className="table">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Marca</th>
+            <th>Puertas</th>
+            <th>Puestos</th>
+            <th>Maletas</th>
+            <th>Acciones
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          {cars.map((item, i) => (
+            <tr>
+              <td>{item._id}</td>
+              <td>{item.marca}</td>
+              <td>{item.puertas}</td>
+              <td>{item.maletas}</td>
+              <td>{item.precio}</td>
+              <td> <Button className="button1" variant="primary">Editar</Button></td>
+              <td> <Button className="button1" variant="primary">Eliminar</Button></td>
+            </tr>
+          ))}
+        </tbody>
+      </Table>
+
+    </div>
+  )
 }
 
 export default CarList

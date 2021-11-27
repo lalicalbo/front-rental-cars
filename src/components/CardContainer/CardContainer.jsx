@@ -3,7 +3,7 @@ import CardCars from "./CardCars/index.js";
 import "./card-container.scss"
 import {getCars} from "../../api/ApiCars";
 
-const CardContainer =({props})=>{
+const CardContainer =({setCurrentCar})=>{
     const [cars, setCars] = useState([]);
 
     useEffect(() => {
@@ -13,7 +13,7 @@ const CardContainer =({props})=>{
     return(
         <div className="items-container" >
         {cars.map((item,i)=>(
-            <CardCars item={item} i={i} key={i} />
+            <CardCars  setCurrentCar={setCurrentCar} item={item} key={i} />
           ))} 
       </div>
     )
