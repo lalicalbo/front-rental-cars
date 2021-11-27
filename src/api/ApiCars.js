@@ -42,5 +42,17 @@ export const quoteCar = async (params) => {
 
 
 
+export const deleteCar = async (id) => {
+  console.log(id)
+  const endpoint = `/api/car/delete/${id}`
+  axios.delete(`${API_URL}${endpoint}`)
+    .catch(err => {
+      console.log("error", err)
+    })
+
+}
+
+
+
 
 

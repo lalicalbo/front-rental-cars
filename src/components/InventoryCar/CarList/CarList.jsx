@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Table, Button } from 'react-bootstrap'
 import "./car-list.scss"
 import { getCars } from "../../../api/ApiCars.js";
+import { deleteCar } from "../../../api/ApiCars.js";
 
 const CarList = () => {
 
@@ -10,6 +11,14 @@ const CarList = () => {
   useEffect(() => {
     getCars().then(cars => setCars(cars))
   }, [])
+
+
+  const remove = (id) =>{
+    deleteCar(id).then(e => {
+      
+    })
+  }
+
 
   return (
     <div className="car-list">
@@ -34,7 +43,7 @@ const CarList = () => {
               <td>{item.maletas}</td>
               <td>{item.precio}</td>
               <td> <Button className="button1" variant="primary">Editar</Button></td>
-              <td> <Button className="button1" variant="primary">Eliminar</Button></td>
+              <td> <Button className="button1" variant="primary" onClick={()=>{remove(item._id)}}>Eliminar</Button></td>
             </tr>
           ))}
         </tbody>

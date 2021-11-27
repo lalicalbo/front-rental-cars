@@ -8,24 +8,29 @@ import { quoteCar } from "../../../api/ApiCars.js"
 const RegisterForm = ({ currentCar }) => {
   const [quoteCarResponse, setQuoteCarResponse] = useState({});
 
-  const cotizar = () => {
+  const quote = (event) => {
+    event.preventDefault();
+    console.log ("event quote",event.target[5].value)
+
     const request = {
-      "id_car": currentCar._id,
-      "initial_date": "11/20/2021",
-      "end_date": "11/27/2021"
+      id_car: currentCar._id,
+      email:event.target[0].value,
+      nombre:event.target[1].value,
+      telefono:event.target[2].value,
+      initial_date:event.target[3].value,
+      end_date:event.target[4].value,
+     
     }
+
     quoteCar(request).then(e => {
       setQuoteCarResponse(e)
     })
   }
 
-  const pagar = () => {
-
-  }
 
   return (
 
-    <Form className="form" >
+    <Form className="form"  onSubmit={quote}>
       <Form.Group as={Row} className="mb-3" >
         <Form.Label column sm="2">
           Email:
@@ -72,8 +77,7 @@ const RegisterForm = ({ currentCar }) => {
       </Form.Group>
       <span>Total: {quoteCarResponse.total}</span>
       <br />
-      <Button className="button2" onClick={cotizar} >Cotizar</Button>
-      <Button className="button2" onClick={pagar} hidden={quoteCarResponse.total == undefined}>Pagar</Button>
+      <Button  type="submit" className="button2"  >Cotizar</Button>
     </Form>
   )
 
