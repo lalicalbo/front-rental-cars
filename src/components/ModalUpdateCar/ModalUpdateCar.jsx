@@ -1,40 +1,19 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Modal, Button, Row, Form, Col } from "react-bootstrap"
-import "./modalnewcar.scss"
-import { createCar } from '../../api/ApiCars'
+import "./modalupdatecar.scss"
+import { updateCar } from '../../api/ApiCars'
 
 
-export const ModalNewCar = ({ setShow, show }) => {
-
+export const ModalUpdateCar = ({ currentCar, setShow, show }) => {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
-    const car = {
-      marca: event.target[1].value,
-      puertas: event.target[2].value,
-      puestos: event.target[3].value,
-      maletas: event.target[4].value,
-      precio: parseInt(event.target[5].value),
-    };
-
-    createCar(car);
-    setShow(false)
-  };
-
-
-
   return (
-
-    <Modal show={show} onHide={handleClose}>
-      <Form className="modal-car" onSubmit={handleSubmit}>
-
+    <Modal  show={show} onHide={handleClose}>
+      <Form className="modal-car"  >
         <Modal.Header className="close-button" closeButton>
-          <Modal.Title className="modal-tittle" >Agregar Carro</Modal.Title>
+          <Modal.Title className="modal-tittle">Modificar Carro</Modal.Title>
         </Modal.Header>
         <Modal.Body >
           <>
@@ -44,7 +23,7 @@ export const ModalNewCar = ({ setShow, show }) => {
                 Marca
               </Form.Label>
               <Col>
-                <Form.Control type="text" />
+                <Form.Control type="text" defaultValue={currentCar.marca} />
               </Col>
             </Row>
             <br />
@@ -53,7 +32,7 @@ export const ModalNewCar = ({ setShow, show }) => {
                 Puertas
               </Form.Label>
               <Col>
-                <Form.Control type="Number" />
+                <Form.Control type="Number" defaultValue={currentCar.puertas} />
               </Col>
             </Row>
             <br />
@@ -62,7 +41,7 @@ export const ModalNewCar = ({ setShow, show }) => {
                 Puestos
               </Form.Label>
               <Col>
-                <Form.Control type="Number" />
+                <Form.Control type="Number" defaultValue={currentCar.puestos} />
               </Col>
             </Row>
             <br />
@@ -71,7 +50,7 @@ export const ModalNewCar = ({ setShow, show }) => {
                 Maletas
               </Form.Label>
               <Col>
-                <Form.Control />
+                <Form.Control defaultValue={currentCar.maletas} />
               </Col>
             </Row>
             <br />
@@ -80,20 +59,21 @@ export const ModalNewCar = ({ setShow, show }) => {
                 Precio
               </Form.Label>
               <Col>
-                <Form.Control type="Number" />
+                <Form.Control type="Number" defaultValue={currentCar.precio} />
               </Col>
             </Row>
 
           </>
         </Modal.Body>
         <Modal.Footer>
-          <Button type="submit" className="button3" >Agregar</Button>
+          <Button type="submit" className="button3" >Modificar</Button>
         </Modal.Footer>
       </Form>
+
     </Modal>
 
   )
 }
 
 
-export default ModalNewCar;
+export default ModalUpdateCar;

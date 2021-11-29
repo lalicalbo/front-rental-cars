@@ -3,11 +3,11 @@ import "./inventory-car.scss"
 import Header from './Header/index.js'
 import CarList from './CarList/index.js'
 
-const InventoryCar = () => {
+const InventoryCar = ({setCurrentCar, currentCar}) => {
     return (
         <div className="inventory">
             <Header />
-            <CarList />    
+            <CarList setCurrentCar={setCurrentCar} currentCar={currentCar}/>    
         </div>
     )
 }

@@ -53,6 +53,18 @@ export const deleteCar = async (id) => {
 }
 
 
+export const updateCar = async (id) => {
+  console.log(id)
+  const endpoint = `/api/car/update/${id}`
+  axios.put(`${API_URL}${endpoint}`)
+    .catch(err => {
+      console.log("error", err)
+    })
+
+}
+
+
+
 
 
 

@@ -1,17 +1,18 @@
 
-import React from 'react'
+import React, {useState} from 'react'
 import Baner from "../components/Banner";
 import InventoryCar from "../components/InventoryCar";
-import ModalNewCar from "../components/ModalNewCar";
 import {Container} from "react-bootstrap";
 
 
-const Admin = () => (
+const Admin = () => {
+    const [currentCar, setCurrentCar] = useState({});
+
+    return (
     <Container fluid className="App">
         <Baner/>
-        <InventoryCar/>
-        <ModalNewCar/>
+        <InventoryCar setCurrentCar={setCurrentCar} currentCar={currentCar} />  
     </Container>
-)
+)}
 
 export default Admin
