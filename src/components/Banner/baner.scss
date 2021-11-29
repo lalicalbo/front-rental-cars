@@ -50,19 +50,18 @@
         position: absolute; 
         bottom:30%;
         left: 70%;
-     
+
+        .submit{
+            width: 12rem;
+            height:2rem;
+            background-color:rgb(241, 98, 15);
+            border: none;
+    
+        }
 
     }
 
-    .submit{
-        margin-top:3%;
-        margin-left: 50%;
-        width: 12rem;
-        height:2rem;
-        background-color:rgb(241, 98, 15);
-        border: none;
-
-    }
+  
 
     
 }
