@@ -8,7 +8,7 @@ export const ModalNewCar = ({ setShow, show }) => {
 
 
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  //const handleShow = () => setShow(true);
 
 
   const handleSubmit = (event) => {

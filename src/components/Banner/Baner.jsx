@@ -17,11 +17,11 @@ const Baner = () => {
                 <div className="user">
                     <Form>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
-                            <Form.Control type="email" placeholder="Usuario" />
+                            <Form.Control type="email"  autoComplete="username"  placeholder="Usuario" />
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="formBasicPassword">
-                            <Form.Control type="password" placeholder="Contraseña" />
+                            <Form.Control type="password" autoComplete="current-password" placeholder="Contraseña" />
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="formBasicCheckbox">
                         </Form.Group>

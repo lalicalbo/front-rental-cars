@@ -40,7 +40,7 @@ const CarList = ({setCurrentCar, currentCar}) => {
       <h1>Lista de carros</h1>
       <Button className="button1" variant="primary" onClick={newCar}>Crear</Button>
       </div>
-      <Table responsive="sm" borderless className="table">
+      <Table responsive="sm" borderless className="table" >
         <thead>
           <tr>
             <th>Id</th>
@@ -55,7 +55,7 @@ const CarList = ({setCurrentCar, currentCar}) => {
         </thead>
         <tbody>
           {cars.map((item, i) => (
-            <tr>
+            <tr key={i}>
               <td>{item._id}</td>
               <td>{item.marca}</td>
               <td>{item.puertas}</td>

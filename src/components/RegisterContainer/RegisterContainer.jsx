@@ -5,7 +5,7 @@ import "./register-container.scss"
 
 
 const RegisterContainer = ({ currentCar }) => {
-    if (currentCar.marca != undefined) {
+    if (currentCar.marca !== undefined) {
         return (
             <div className="register-Container">
                 <RentCard currentCar={currentCar} />

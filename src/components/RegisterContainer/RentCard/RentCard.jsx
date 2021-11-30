@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Button } from "react-bootstrap";
+import { Card} from "react-bootstrap";
 import "./rent-card.scss"
 
 export const RentCard = ({currentCar}) => {
