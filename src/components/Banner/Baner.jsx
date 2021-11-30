@@ -29,8 +29,6 @@ const Baner = () => {
                             Ingresar
                         </Button>
                     </Form>
-
-
                 </div>
             </div>
         </div>
