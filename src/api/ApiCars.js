@@ -17,7 +17,6 @@ export const getCars = async () => {
 
 
 export const createCar = async (params) => {
-  console.log(params)
   const endpoint = "/api/car/create"
   axios.post(`${API_URL}${endpoint}`, params)
     .catch(err => {
@@ -28,7 +27,6 @@ export const createCar = async (params) => {
 
 
 export const quoteCar = async (params) => {
-  console.log(params)
   const endpoint = "/api/rental/quote"
   return axios.post(`${API_URL}${endpoint}`, params)
     .then(response => {
@@ -41,9 +39,7 @@ export const quoteCar = async (params) => {
 }
 
 
-
 export const deleteCar = async (id) => {
-  console.log(id)
   const endpoint = `/api/car/delete/${id}`
   axios.delete(`${API_URL}${endpoint}`)
     .catch(err => {
@@ -53,12 +49,8 @@ export const deleteCar = async (id) => {
 }
 
 
-
-
 export const updateCar = async (id, params) => {
-  
   const endpoint = `/api/car/update/${id}`
-  console.log("endpoint",endpoint)
    axios.put(`${API_URL}${endpoint}`, params)
     .catch(err => {
       console.log("error", err)

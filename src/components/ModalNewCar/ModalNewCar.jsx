@@ -1,15 +1,11 @@
-import React from 'react'
-import { Modal, Button, Row, Form, Col } from "react-bootstrap"
-import "./modalnewcar.scss"
-import { createCar } from '../../api/ApiCars'
+import React from 'react';
+import { Modal, Button, Row, Form, Col } from "react-bootstrap";
+import { createCar } from '../../api/ApiCars';
+import "./modalnewcar.scss";
 
 
 export const ModalNewCar = ({ setShow, show }) => {
-
-
   const handleClose = () => setShow(false);
-  //const handleShow = () => setShow(true);
-
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -27,12 +23,9 @@ export const ModalNewCar = ({ setShow, show }) => {
   };
 
 
-
   return (
-
     <Modal show={show} onHide={handleClose}>
       <Form className="modal-car" onSubmit={handleSubmit}>
-
         <Modal.Header className="close-button" closeButton>
           <Modal.Title className="modal-tittle" >Agregar Carro</Modal.Title>
         </Modal.Header>
@@ -83,7 +76,6 @@ export const ModalNewCar = ({ setShow, show }) => {
                 <Form.Control type="Number" />
               </Col>
             </Row>
-
           </>
         </Modal.Body>
         <Modal.Footer>
@@ -91,9 +83,7 @@ export const ModalNewCar = ({ setShow, show }) => {
         </Modal.Footer>
       </Form>
     </Modal>
-
-  )
-}
-
+  );
+};
 
 export default ModalNewCar;

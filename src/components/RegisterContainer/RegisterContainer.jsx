@@ -10,17 +10,14 @@ const RegisterContainer = ({ currentCar }) => {
             <div className="register-Container">
                 <RentCard currentCar={currentCar} />
                 <RegisterForm currentCar={currentCar} />
-
             </div>
-        )
+        );
     }
     else {
         return (<div className="register-Container">
         </div>
-        )
-    }
-
-}
-
+        );
+    };
+};
 
 export default RegisterContainer;

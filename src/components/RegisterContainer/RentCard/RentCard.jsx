@@ -1,8 +1,9 @@
 import React from "react";
-import { Card} from "react-bootstrap";
-import "./rent-card.scss"
+import { Card } from "react-bootstrap";
+import "./rent-card.scss";
 
-export const RentCard = ({currentCar}) => {
+
+export const RentCard = ({ currentCar }) => {
 
   return (
     <div className="rent-card">
@@ -17,8 +18,7 @@ export const RentCard = ({currentCar}) => {
         </Card.Body>
       </Card >
     </div>
-  )
-}
-
+  );
+};
 
 export default RentCard;
