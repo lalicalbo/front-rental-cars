@@ -66,7 +66,7 @@ const RegisterForm = ({ currentCar }) => {
           <Form.Control type="date" />
         </Col>
       </Form.Group>
-      <span>Total: {quoteCarResponse.total}</span>
+      <span>Total:${quoteCarResponse.total}</span>
       <br />
       <Button type="submit" className="button2">Cotizar</Button>
     </Form>

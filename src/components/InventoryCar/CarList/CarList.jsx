@@ -58,7 +58,7 @@ const CarList = ({ setCurrentCar, currentCar }) => {
               <td>{item.puertas}</td>
               <td>{item.puestos}</td>
               <td>{item.maletas}</td>
-              <td>{item.precio}</td>
+              <td>${item.precio}</td>
               <td> <Button className="button1" variant="primary" onClick={() => { update(item) }}>Editar</Button></td>
               <td> <Button className="button1" variant="primary" onClick={() => { remove(item._id) }}>Eliminar</Button></td>
             </tr>

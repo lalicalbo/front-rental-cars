@@ -12,7 +12,7 @@ const CardCars = ({ item, setCurrentCar }) => {
         <Card.Text>Puertas:{item.puertas} </Card.Text>
         <Card.Text>Puestos:{item.puestos} </Card.Text>
         <Card.Text>Maletas:{item.maletas} </Card.Text>
-        <Card.Text>Precio:{item.precio} </Card.Text>
+        <Card.Text>Precio:${item.precio} </Card.Text>
         <Button className="button" variant="primary" onClick={() => { setCurrentCar(item) }}>Alquilar</Button>
       </Card.Body>
     </Card>

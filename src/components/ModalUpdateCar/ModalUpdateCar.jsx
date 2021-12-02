@@ -1,13 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Modal, Button, Row, Form, Col } from "react-bootstrap";
 import { updateCar } from '../../api/ApiCars';
 import "./modalupdatecar.scss";
 
 
 export const ModalUpdateCar = ({ currentCar, setShow, show }) => {
-
-  //const [update, setUpdate] = useState({});
-
+  
   const handleClose = () => setShow(false);
 
   const updateCars = (event) => {

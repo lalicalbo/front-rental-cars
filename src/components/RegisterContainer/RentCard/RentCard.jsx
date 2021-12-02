@@ -14,7 +14,7 @@ export const RentCard = ({ currentCar }) => {
           <Card.Text>Puertas:{currentCar.puertas} </Card.Text>
           <Card.Text>Puestos:{currentCar.puestos}  </Card.Text>
           <Card.Text>Maletas:{currentCar.maletas}  </Card.Text>
-          <Card.Text>Precio:{currentCar.precio}  </Card.Text>
+          <Card.Text>Precio:${currentCar.precio}  </Card.Text>
         </Card.Body>
       </Card >
     </div>
